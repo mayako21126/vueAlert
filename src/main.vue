@@ -1,12 +1,7 @@
 <template>
   <div id="">
-    <input v-model="num1"/>
-    <h1>Hello App!</h1>
-
-    <p>
-      <router-link to="/H">Go to Barxxx</router-link>
-    </p>
-    <router-view></router-view>
+  <button @click="show()">asd</button>
+    <button @click="hide()">hide</button>
   </div>
 </template>
 <script type="text/babel">
@@ -14,6 +9,25 @@
     data () {
       return {
         num1: 10
+      }
+    },methods:{
+      show:function(){
+        console.log(this)
+        this.vueLoading.show({
+          onShow:function(){
+            console.log('onshow')
+          }
+        });
+
+      },
+      hide:function(){
+        console.log(this)
+        this.vueLoading.hide({
+          onHide:function(){
+            console.log('onhide')
+          }
+        });
+
       }
     }
   }
