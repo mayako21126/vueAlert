@@ -1,4 +1,4 @@
-import VueLoading from './plugins/index.js'
+import VueLoading from './plugins/build.js'
 import Main from './main.vue'
 import Vue from 'vue'
 

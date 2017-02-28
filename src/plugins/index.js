@@ -2,7 +2,6 @@
  * Created by mayako on 2017/2/28.
  */
 import loading from '../components/loading.vue'
-import vue from 'vue'
 
 let $vm
 let watcher

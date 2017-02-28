@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node build/dev-server.js --inline --hot",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "plugin":"node build/build-plugin.js"
   },
   "dependencies": {
     "vue": "^2.1.0"
