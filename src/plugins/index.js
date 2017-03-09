@@ -1,60 +1,45 @@
 /**
  * Created by mayako on 2017/2/28.
  */
-import loading from '../components/loading.vue'
-
+import alert from '../components/alert.vue'
+import $ from 'jquery'
 let $vm
 let watcher
 
 export default {
     install: function (vue, options) {
-    const VueLoading = vue.extend(loading)
+    const VueAlert = vue.extend(alert)
 
     if (!$vm) {
-      $vm = new VueLoading({
+      $vm = new VueAlert({
         el: document.createElement('div')
       })
     }
     document.body.appendChild($vm.$el)
 
-    const vueLoading = {
-      show (options) {
-        if(options){
+    const vueAlert = {
+      show (msg,type,timer) {
+        if(msg){
+          if(timer==undefined){
+            timer=2000;
+          }
           // destroy watcher
-          watcher && watcher()
-
-          if (options.onShow) {
-            watcher = $vm.$watch('loading', (val) => {
-             if(val){
-               options.onShow()
-             }
-            })
+          switch (type) {
+            case "success":
+              $(".axc-success span").text(msg);
+              $("#axc-success").show().delay(timer).fadeOut();
+              break;
+            case "error":
+              $(".axc-error span").text(msg);
+              $("#axc-error").show().delay(timer).fadeOut();
+              break;
           }
         }
-        $vm.loading = true
-      },
-      hide (options) {
-
-        if(options){
-          // destroy watcher
-
-          watcher && watcher()
-          if (options.onHide) {
-            watcher = $vm.$watch('loading', (val) => {
-              if(val==false){
-                options.onHide()
-              }
-            })
-          }
-        }
-        $vm.loading = false
       }
     }
-
-
     vue.mixin({
     created: function () {
-      this.vueLoading = vueLoading
+      this.vueAlert = vueAlert
     }
   })
   }

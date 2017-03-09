@@ -1,4 +1,4 @@
-# ygdl
+# vueAlert
 
 > mayako
 
@@ -6,13 +6,16 @@
 
 ``` bash
 # install dependencies
-npm install
+npm install may-vue-alert -s
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Usage
+Vue.use(VueAlert)
 
-# build for production with minification
-npm run build
-```
+# Function
+this.vueAlert.show('msg','type','time')
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# Parameter
+
+msg:content,
+type:success|error,
+time:2000|custom

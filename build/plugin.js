@@ -17,7 +17,7 @@ module.exports = {
     //`dist`文件夹
     path: './dist',
     // 文件 `build.js` 即 dist/build.js
-    filename: 'build.js',
+    filename: 'index.js',
     library: 'VueLoading',
     libraryTarget: 'umd'
   },

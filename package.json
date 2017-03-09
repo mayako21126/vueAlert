@@ -1,9 +1,9 @@
 {
-  "name": "loading",
+  "name": "may-vue-alert",
   "version": "1.0.0",
-  "description": "loading plugin",
+  "description": "alert plugin",
   "author": "mayako",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "node build/dev-server.js --inline --hot",
     "build": "node build/build.js",
@@ -13,6 +13,8 @@
   "dependencies": {
     "vue": "^2.1.0"
   },
+  "license": "MIT",
+  "main": "dist/index.js",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
